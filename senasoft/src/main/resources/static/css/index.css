@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primario: #0033A0;
+  --color-secundario: #000000;
+  --color-fondo: #f5f5f5;
+  --blanco: #ffffff;
+  --color-texto: #333333;
+  --color-borde: #ddd;
+  --hover-bg: #e6f0ff;
+  --boton-activo: #cce5ff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
