@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <div class="logo-container">
-            <img src="    " alt="RFAST Logo" />
+            <img src="/senasoft/src/main/resources/static/img/222.png" alt="RFAST Logo" />
         </div>
 
         <div class="form-container">
@@ -19,8 +19,16 @@
 
             <form id="login-form" class="form active">
                 <h2>Iniciar Sesión</h2>
-                <input type="email" id="login-email" placeholder="Correo electrónico" required />
-                <input type="password" id="login-password" placeholder="Contraseña" required />
+                <label for ="opciones">Eliga el tipo de documento</label>
+                <select name="opciones" id="opciones">
+                    <option value="opcion1">Tarjeta de identidad</option>
+                    <option value="opcion2">Cédula de ciudadanía</option>
+                    <option value="opcion3">Cédula de extranjería</option>
+                    <option value="opcion3">Permiso por proteccion temporal </option>
+
+                </select>
+                <input type="documento_identidad" id="login-identidad" placeholder="Numero de identificacion" required />
+                <input type="date" id="login-fecha_naci" placeholder="Fecha de Nacimiento" required />
                 <button type="submit">Entrar</button>
             </form>
 
