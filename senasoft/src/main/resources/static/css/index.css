@@ -108,3 +108,24 @@ body {
 .toggle-buttons {
     display: none; /* Solo si no vas a usar más pestañas por ahora */
 }
+
+
+.mensaje {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.mensaje.error {
+    background-color: #ffe3e3;
+    color: #d00000;
+    border: 1px solid #ffb3b3;
+}
+
+.mensaje.success {
+    background-color: #e0f8e0;
+    color: #146c43;
+    border: 1px solid #9de09d;
+}
