@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login Prueba</title>
-    <link rel="stylesheet" href="/src/main/resources/static/css/index.css" />
+
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
+
 </head>
 <body>
     <div class="container">
         <div class="logo-container">
-            <img src="/src/main/resources/static/img/222.png" alt="RFAST Logo" />
+
+            <img th:src="@{/img/222.png}" alt="RFAST Logo" />
+
         </div>
 
         <div class="form-container">
@@ -17,19 +21,24 @@
                 <button id="login-btn" class="active">Iniciar Sesión</button>
             </div>
 
-            <form id="login-form" class="form active">
+            <form id="login-form" class="form active" method="get" th:action="@{/ingresar}">
                 <h2>Iniciar Sesión</h2>
-                <label for ="opciones">Eliga el tipo de documento</label>
-                <select name="opciones" id="opciones">
-                    <option value="opcion1">Tarjeta de identidad</option>
-                    <option value="opcion2">Cédula de ciudadanía</option>
-                    <option value="opcion3">Cédula de extranjería</option>
-                    <option value="opcion3">Permiso por proteccion temporal </option>
-
+                <div class="alert" th:if="${error}" th:text="${error}" style="color: red; margin-bottom: 10px;"></div>
+                <label for="idTipoIdentificacion">Eliga el tipo de documento</label>
+                <select name="idTipoIdentificacion" id="idTipoIdentificacion" required>
+                    <option value="1">Tarjeta de identidad</option>
+                    <option value="2">Cédula de ciudadanía</option>
+                    <option value="3">Cédula de extranjería</option>
+                    <option value="4">Permiso por proteccion temporal</option>
                 </select>
-                <input type="documento_identidad" id="login-identidad" placeholder="Numero de identificacion" required />
-                <label for ="opciones">Ingrese su fecha de Nacimiento</label>
-                <input type="date" id="login-fecha_naci" placeholder="Fecha de Nacimiento" required />
+
+                <label for="numeroIdentificacion">Número de identificación</label>
+                <input type="number" name="numeroIdentificacion" id="numeroIdentificacion" placeholder="Numero de identificacion" required />
+
+                <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                <input type="date" name="fechaNacimiento" id="fechaNacimiento" placeholder="Fecha de Nacimiento" required />
+
+
                 <button type="submit">Entrar</button>
             </form>
 
